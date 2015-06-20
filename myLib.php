@@ -1,6 +1,6 @@
 <?php
 
-    function headerBegin($title){
+    function headBegin($title){
         print '<!DOCTYPE html>
                 <html>
                 <head>
@@ -8,7 +8,7 @@
         print '     <title>'.$title.'</title>';
     }
 
-    function importPackage_general(){
+    function importPackage_home(){
         print '  <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
                 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
                 <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -17,8 +17,17 @@
                 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>';
     }
 
-    function css_General(){
-        
+    function css_general(){
+        print '<link rel="stylesheet" type="text/css" href="style_general.css"/>';
+    }
+
+    function css_maps(){
+        print '<link rel="stylesheet" type="text/css" href="style_maps.css"/>';
+    }
+
+    function headEnd(){
+        print '</head>';
+        print '<body>';
     }
 
     function navigationBar(){
@@ -41,4 +50,17 @@
         </nav>';
     }
 
+    function curlGetData($url){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-type: application/json',
+            'Accept: */*'
+        ));
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
 ?>
