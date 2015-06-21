@@ -28,6 +28,25 @@
                <link rel="stylesheet" type="text/css" href="style_general.css"/>';
     }
 
+    function importPackage_trendline(){
+        print ' <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+                <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+                <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+                <link rel="stylesheet" type="text/css" href="style_general.css"/>';
+    }
+
+    function importPackage_compare(){
+        print ' <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+                <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+                <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+                <script src="http://code.highcharts.com/highcharts.js"></script>
+                <script src="http://code.highcharts.com/modules/drilldown.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+                <link rel="stylesheet" type="text/css" href="style_general.css"/>';
+    }
+
     function css_general(){
         print '<link rel="stylesheet" type="text/css" href="style_general.css"/>';
     }

@@ -207,7 +207,6 @@
             }
 
             $("#piechart").click(function(){
-
                 $("#container0").highcharts({
                     chart: {
                         type: "column"
@@ -287,7 +286,6 @@
                         }
                     }]
                 });
-
             });
 
             $("#columnchart").click(function(){

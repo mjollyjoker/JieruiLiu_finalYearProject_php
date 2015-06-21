@@ -46,6 +46,7 @@
             parseData_crimeAgstProperty(dataRaw_crimeAgstProperty);
             parseData_drugOffence(dataRaw_drugOffence);
             parseData_otherCrime(dataRaw_otherCrime);
+            drawChart();
 
             function parseData_crimeAgstPerson(data) {
                 var subTotal = 0;
@@ -164,7 +165,7 @@
                         series: {
                             dataLabels: {
                                 enabled: true,
-                                format: "{point.name}: {point.y:.1f}%"
+                                format: \'{point.name}: {point.y:.1f}%\'
                             }
                         }
                     },
