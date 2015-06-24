@@ -47,6 +47,24 @@
                 <link rel="stylesheet" type="text/css" href="style_general.css"/>';
     }
 
+    function importPackage_heatmap(){
+        print ' <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+                <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?libraries=visualization"></script>
+                <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.8/src/markerwithlabel.js"></script>
+                <link rel="stylesheet" type="text/css" href="style_maps.css"/>';
+    }
+
+    function importPackage_choropleth(){
+        print ' <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+                <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.5/src/markerwithlabel_packed.js"></script>
+                <link rel="stylesheet" type="text/css" href="style_maps.css"/>';
+    }
+
     function css_general(){
         print '<link rel="stylesheet" type="text/css" href="style_general.css"/>';
     }
@@ -78,6 +96,37 @@
             </div>
           </div>
         </nav>';
+    }
+
+    function heatmapCanvas(){
+        print ' <div id="dataset_panel_heatmap">
+                    <b>Data set selection</b><br>
+                    <input type="radio" onclick="toggleHeatmapAgstPerson()" name="heatmapData" value="1"> Crime Against Person<br>
+                    <input type="radio" onclick="toggleHeatmapAgstProperty()" name="heatmapData" value="2"> Crime Against Property<br>
+                    <input type="radio" onclick="toggleHeatmapDrugOffence()" name="heatmapData" value="3"> Drug Offence<br>
+                    <input type="radio" onclick="toggleHeatmapCrimeOther()" name="heatmapData" value="4"> Other Crime<br>
+                    <input type="radio" onclick="toggleHeatmapFull()" name="heatmapData" value="0" checked> All<br><br>
+                    <input type="checkbox" onclick="showTweets()" name="showTweets" value="show">Show random tweets<br>
+                    <input type="checkbox" onclick="showCluster()" name="showCluster" value="show">Show cluster centre<br>
+                </div>
+                <div id="map-canvas"></div>';
+    }
+
+    function choroplethCanvas(){
+        print '<div id="data_display_panel"><b>Postal Area information</b><br>Hover over a Postal Area</div>
+                    <div id="dataset_panel_choropleth">
+                    <b>Data set selection</b><br>
+                    <input type="radio" onclick="setColorGeneral()" name="choroplethType" value="0" checked> General<br>
+                    <input type="radio" onclick="setColorPoliceRecord()" name="choroplethType" value="1"> Police record per 100 ppl<br>
+                    <input type="radio" onclick="setColorCrimeTweets()" name="choroplethType" value="2"> Crime Tweets count per 1000 ppl<br>
+                    <input type="radio" onclick="setColorPopulation()" name="choroplethType" value="3"> Population<br>
+                    <input type="radio" onclick="setColorUnemployment()" name="choroplethType" value="4"> Unemployment rate<br>
+                    <input type="radio" onclick="setColorAvgIncome()" name="choroplethType" value="5"> Average weekly income<br>
+                    <input type="radio" onclick="setColorEduTertiery()" name="choroplethType" value="6"> Edu level Tertiery<br>
+                    <input type="radio" onclick="setColorAlcoholic()" name="choroplethType" value="7"> Alcohol related tweets
+                </div>
+                <div id="data_legend_outer"></div>
+                <div id="map-canvas"></div>';
     }
 
     function curlGetData($url){

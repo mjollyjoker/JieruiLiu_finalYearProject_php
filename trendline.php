@@ -29,7 +29,6 @@
 
     print '<script>
         var dataRaw_postcodeInfor = '.$dataPostcodeInfor.';
-        var docIDs = []
         var pCodeCoordin = []
         var postcode = []
         var suburbName = []
